@@ -3,5 +3,15 @@
 // (e.g., the presence of "@" and a ".").
 // Example: validateEmail("test@example.com") should return true.
 
+function validateEmail(email) {
+  const atIndex = email.indexOf("@");
+  const dotIndex = email.indexOf(".", atIndex);
+  if (atIndex > 0 && dotIndex > atIndex + 1) {
+    return true;
+  } else {
+    return false;
+  };
+};
+
 console.log(validateEmail("test@example.com")); // Expected output: true
 console.log(validateEmail("invalid-email.com")); // Expected output: false
